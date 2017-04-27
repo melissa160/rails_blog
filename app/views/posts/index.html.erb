@@ -2,9 +2,10 @@
 <ul>
   <% @posts.each do |post| %>
     <article>
+      <div><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></div>
       <h2><%= post.title %></h2>
       <p><%= post.description %></p>
-      <%= link_to "Ver mas...", post_path, class: "ver"  %>
+      <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
     </article>
   <% end %>
 </ul>

@@ -6,16 +6,17 @@ $vino: #280004;
 $gris: #383838;
 $blanco: #F6EBE9;
 $turquesa: #16857A;
-$verdeclaro: #B3CB88;
+$verdeclaro: #F6FEAA;
 
 article {
   background-color: $verdeclaro;
   padding: 30px;
   margin: 30px;
-  border-radius: 5px;
+  border-radius: 15px;
   h2{
     text-align: center;
     color: $turquesa;
+    margin-top: 0;
   }
   p{
     text-align: justify;
@@ -23,6 +24,10 @@ article {
   }
   .ver{
     color: $turquesa;
-    
+
   }
+}
+.glyphicon-pushpin{
+  font-size: 20px;
+  color: $vino;
 }
