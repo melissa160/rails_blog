@@ -6,10 +6,10 @@ $vino: #280004;
 $gris: #383838;
 $blanco: #F6EBE9;
 $turquesa: #16857A;
-$verdeclaro: #F6FEAA;
+$amarilloclaro: #F6FEAA;
 
 article {
-  background-color: $verdeclaro;
+  background-color: $amarilloclaro;
   padding: 30px;
   margin: 30px;
   border-radius: 15px;
@@ -31,3 +31,34 @@ article {
   font-size: 20px;
   color: $vino;
 }
+
+.btn-add,
+.btn-add:focus,
+.btn-add:active {
+  color: $amarilloclaro;
+  background-color: $turquesa;
+}
+
+ .btn-add:hover {
+  color: $amarilloclaro;
+  background-color: $vino ; 
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  color: $turquesa;
+}
+
+  a {
+    &:hover{
+    text-decoration: none;
+    color: $vino;
+    }
+  }
