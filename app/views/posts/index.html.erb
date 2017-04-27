@@ -1,6 +1,6 @@
 <div class="container">
 <div class="text-center"">
-  <%= link_to "Agrega tu Post", posts_path, method: :post, class: "btn btn-add"  %>
+  <%= link_to "Agrega tu Post", new_post_path, class: "btn btn-add"  %>
 </div>
 <ul>
   <% @posts.each do |post| %>
