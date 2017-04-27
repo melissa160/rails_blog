@@ -1,3 +1,28 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$vino: #280004;
+$gris: #383838;
+$blanco: #F6EBE9;
+$turquesa: #16857A;
+$verdeclaro: #B3CB88;
+
+article {
+  background-color: $verdeclaro;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 5px;
+  h2{
+    text-align: center;
+    color: $turquesa;
+  }
+  p{
+    text-align: justify;
+    color: $gris;
+  }
+  .ver{
+    color: $turquesa;
+    
+  }
+}
