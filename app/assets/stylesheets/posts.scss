@@ -8,6 +8,7 @@ $blanco: #F6EBE9;
 $turquesa: #16857A;
 $amarilloclaro: #F6FEAA;
 $amarillooscuro: #F9FEC8;
+$coral: #ff7f50;
 
 article {
   background-color: $amarilloclaro;
@@ -105,3 +106,18 @@ a {
       button:focus {
       border: none;
     }
+
+#error_explanation h2 {
+  color: $coral;
+  font-size: 14px;
+}
+
+#error_explanation li {
+  color: $turquesa;
+  list-style: none;
+}
+
+#error_explanation {
+  color: $coral;
+  font-size: 14px;
+}
