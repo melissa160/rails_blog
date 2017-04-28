@@ -14,6 +14,7 @@
       </h2>
 
       <p><%= truncate(post.description, length: 300) %></p>
+      <p><%= time_ago_in_words(post.created_at)%></p>
       <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
     </article>
   <% end %>

@@ -7,7 +7,7 @@ $vino: #280004;
 $gris: #383838;
 $blanco: #F6EBE9;
 $turquesa: #16857A;
-$verdeclaro: #B3CB88;
+$amarilloclaro: #F6FEAA;
 
 $text-color: $gris;
 $title-color: $vino;
@@ -22,13 +22,13 @@ body {
 .navbar-nav{
   li {
     a{
-    color: $verdeclaro;
+    color: $amarilloclaro;
     }
   }
 }
 
 .navbar-default .navbar-nav > li.verde > a  {
-  color: $verdeclaro;
+  color: $amarilloclaro;
   cursor: default;
 }
 
@@ -39,3 +39,23 @@ body {
 .navbar-brand.turquesa {
   color: $turquesa;
 }
+
+#wrap {
+  min-height: 50%;
+
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:300px; /* this needs to be bigger than footer height*/
+  width: 100%
+}
+
+  footer {
+
+  .navbar.navbar-default{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    } 
+  }

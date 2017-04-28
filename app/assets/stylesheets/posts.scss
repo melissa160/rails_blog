@@ -66,16 +66,30 @@ a {
 
 
 
-.text-center.app-form {
+.text-center {
   label {
     color: $turquesa;
+    margin-top: 20px;
   }
 
   input[type="submit"] {
     width: 130px;
+    margin-top: 25px;
   }
 
-  input{
-  width: 430px;
+  input[type="email"], input[type="password"]  {
+  width: 230px;
+  }
 }
+
+
+.text-center.app-form{
+  input {
+  width: 430px;
+  }
+  input[type="submit"] {
+    width: 130px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
 }
