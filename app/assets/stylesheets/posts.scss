@@ -50,15 +50,32 @@ article {
   align-content: center;
   flex-direction: column;
   text-align: center;
+  width: 100px;
 }
 
 .title {
   color: $turquesa;
 }
 
-  a {
-    &:hover{
-    text-decoration: none;
-    color: $vino;
-    }
+a {
+  &:hover{
+  text-decoration: none;
+  color: $vino;
   }
+}
+
+
+
+.text-center.app-form {
+  label {
+    color: $turquesa;
+  }
+
+  input[type="submit"] {
+    width: 130px;
+  }
+
+  input{
+  width: 430px;
+}
+}

@@ -13,7 +13,7 @@
           
       </h2>
 
-      <p><%= post.description %></p>
+      <p><%= truncate(post.description, length: 300) %></p>
       <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
     </article>
   <% end %>
