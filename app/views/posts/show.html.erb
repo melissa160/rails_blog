@@ -2,6 +2,18 @@
   <article>
     <h2><%= @post.title %></h2>
     <%= render :html => raw(@markdown.render(@post.description)) %> 
+    <% if user_signed_in? %>
+      <% if current_user.id == @post.user_id %>
+        <%= form_tag(post_path(@post.id), method: :delete) do%>
+          <%= button_tag( class: "btn icon pull-right") do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>          
+        <% end %>
+        <%= link_to edit_post_path(@post.id), class: "btn icon pull-right" do  %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      <% end %>
+      <% end %>
   </article>
   
 </div>

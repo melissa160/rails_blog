@@ -13,8 +13,7 @@
       </h2>
 
       <p class="time">Publicado <%= time_ago_in_words(post.created_at)%> por: <%= post.user.email %></p>
-
-      <p><%= truncate(raw(@markdown.render(post.description)), length: 250) %></p>
+      <%= render :html => raw(@markdown.render(truncate(post.description, length: 250))) %> 
 
       <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
       <% if user_signed_in? %>
