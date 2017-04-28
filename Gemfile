@@ -11,9 +11,10 @@ gem 'rails', '~> 5.0.2'
 
 #gema para internalicionalizar msg devise
 gem 'devise-i18n'
-
 # internacionalizar rails
 gem 'rails-i18n', '~> 5.0.0'
+# gema para renderizar vistas soportando markdonw
+gem 'redcarpet'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

@@ -1,7 +1,7 @@
 <div class="container">
   <article>
     <h2><%= @post.title %></h2>
-    <p><%= @post.description %></p>  
+    <%= render :html => raw(@markdown.render(@post.description)) %> 
   </article>
   
 </div>

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_markdowm, only: [:show, :create, :new, :index]
+
   def index
     @posts = Post.order(id: :desc)
   end
@@ -21,7 +23,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
-      render new_post_path
+      render posts_path
     end
   end
 
