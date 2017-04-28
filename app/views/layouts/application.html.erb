@@ -38,6 +38,20 @@
     </nav>
     <div id="wrap">
       <div id="main" class="container clear-top">
+      <% flash.each do |name, msg| %>
+      <!-- # New code (allow for flash elements to be arrays) -->
+      <% if msg.class == Array %>
+        <% msg.each do |message| %>
+          <div id="error_explanation">
+          <%= content_tag :div, message, :id => "flash_#{name}" %>
+          </div>
+        <% end %>
+      <% else %>
+      <div id="error_explanation">
+        <%= content_tag :div, msg, :id => "flash_#{name} error_explanation" %>
+      </div>
+      <% end %>
+    <% end %>
         <%= yield %>
       </div>
     </div>

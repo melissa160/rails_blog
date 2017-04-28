@@ -7,6 +7,7 @@ $gris: #383838;
 $blanco: #F6EBE9;
 $turquesa: #16857A;
 $amarilloclaro: #F6FEAA;
+$amarillooscuro: #F9FEC8;
 
 article {
   background-color: $amarilloclaro;
@@ -93,3 +94,14 @@ a {
     margin-bottom: 30px;
   }
 }
+
+.icon {
+  background-color: transparent;
+  border: none;
+  color: $turquesa;
+
+  }
+
+      button:focus {
+      border: none;
+    }

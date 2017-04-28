@@ -10,12 +10,26 @@
         <%= link_to post_path(post.id), class: "title" do %>
           <%= post.title %>
         <% end %>
-          
       </h2>
 
-      <p><%= truncate(post.description, length: 300) %></p>
-      <p><%= time_ago_in_words(post.created_at)%></p>
+      <p class="time">Publicado <%= time_ago_in_words(post.created_at)%> por: <%= post.user.email %></p>
+
+      <p><%= truncate(post.description, length: 250) %></p>
+
       <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
+      <% if user_signed_in? %>
+      <% if current_user.id == post.user_id %>
+        <%= form_tag(post_path(post.id), method: :delete) do%>
+          <%= button_tag( class: "btn icon pull-right") do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>          
+        <% end %>
+        <%= link_to edit_post_path(post.id), class: "btn icon pull-right" do  %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      <% end %>
+      <% end %>
+
     </article>
   <% end %>
 </ul>

@@ -1,5 +1,17 @@
 <div class="container">
 <div class="text-center app-form">
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2> 
+         Este post no puede ser creado por lo siguiente:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= form_for(@post) do |f| %>
     <%= f.label :title do %>
       Titulo:

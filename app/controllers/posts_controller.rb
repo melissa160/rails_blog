@@ -21,22 +21,25 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
+      render new_post_path
     end
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update(posts_params)
+    redirect_to post_path(@post.id)
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def edit
     @post = Post.find(params[:id])
-    if current_user.id == @post.id
-      render :edit
-    else
-      @post.errors.details["no es tu post"]
-    end
+    render :edit
   end
 
   private
