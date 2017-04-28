@@ -18,7 +18,7 @@
       <%= link_to "Ver mas...", post_path(post.id), class: "ver"  %>
       <% if user_signed_in? %>
       <% if current_user.id == post.user_id %>
-        <%= form_tag(post_path(post.id), method: :delete) do%>
+        <%= form_tag(post_path(post.id), method: :delete, data: { confirm: 'Estas seguro de eliminar este Post?' }) do%>
           <%= button_tag( class: "btn icon pull-right") do %>
             <span class="glyphicon glyphicon-trash"></span>
           <% end %>          
