@@ -1,5 +1,6 @@
 <div class="container">
 <div class="text-center app-form">
+<h3 class="title"><%= @post.new_record? ? "Crear": "Editar" %> Post</h3>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2> 
@@ -21,7 +22,7 @@
       Descripción:
     <% end %>
     <p><%= f.text_area :description, cols: 50, rows: 16 %></p>
-    <%= f.submit "Crear Post!", class: "btn btn-add"%>  
+    <%= f.submit @post.new_record? ? "Publicar Post": "Editar Post", class: "btn btn-add"%>  
   <% end %>
 </div>
 </div>
