@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_markdowm, only: [:show, :create, :new, :index]
+  before_action :set_markdowm, only: [:show, :create, :new, :index, :update]
 
   def create
     @post = Post.find(params[:post_id])
@@ -10,6 +10,29 @@ class CommentsController < ApplicationController
     else
       render "posts/show"
     end
+  end
+
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comments_params)
+    @post = Post.find(params[:post_id])
+    if @comment.valid?
+      redirect_to post_path(params[:post_id])
+    else
+      render "comments/edit"
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to post_path(params[:post_id])
   end
   
   private

@@ -22,7 +22,9 @@
       Descripción:
     <% end %>
     <p><%= f.text_area :description, cols: 50, rows: 16 %></p>
+    <p class="p">Los comentarios soportan Markdown</p>
     <%= f.submit @post.new_record? ? "Publicar Post": "Editar Post", class: "btn btn-add"%>  
+
   <% end %>
 </div>
 </div>

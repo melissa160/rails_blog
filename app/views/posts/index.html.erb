@@ -6,7 +6,7 @@
   <% @posts.each do |post| %>
     <article>
       <div><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></div>
-      <h2>
+      <h2 class="title">
         <%= link_to post_path(post.id), class: "title" do %>
           <%= post.title %>
         <% end %>

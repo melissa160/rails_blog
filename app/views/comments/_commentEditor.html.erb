@@ -1,8 +1,23 @@
 <% if user_signed_in?%>
 <div class="pull-left comment-area">
   <div class="container">
+   <% if @comment %>
+    <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2> 
+         Este comentario no puede ser creado por lo siguiente:
+      </h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
     <%= form_for [type_obj, type_obj_new] do |f| %>
       <%= f.text_area(:description, cols: 60, rows: 3, placeholder: "Ingresa tu opinion aqui...") %>
+      <p class="p">Los comentarios soportan Markdown</p>
       <div><%= f.submit class: "btn btn-add pull-left" %></div>       
     <% end %>
   </div>
