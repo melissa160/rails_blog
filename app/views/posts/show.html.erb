@@ -1,6 +1,7 @@
 <div class="container">
   <article>
     <h2 class="title"><%= @post.title %></h2>
+    <p class="time">Publicado hace <%= time_ago_in_words(@post.created_at)%> por: <%= @post.user.email %></p>
     <%= render :html => raw(@markdown.render(@post.description)) %> 
     <% if user_signed_in? %>
       <% if current_user.id == @post.user_id %>
