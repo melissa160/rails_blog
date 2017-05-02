@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     @post = Post.new(posts_params)
     if @post.save
       redirect_to posts_path
+      flash[:notice] = "Su post fue creado con exito"
     else
       render new_post_path
     end
@@ -30,7 +31,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(posts_params)
-    redirect_to posts_path
+    if @post.valid? 
+      redirect_to posts_path
+    else
+      render new_post_path
+    end
   end
 
   def destroy

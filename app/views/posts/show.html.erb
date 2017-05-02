@@ -13,7 +13,32 @@
           <span class="glyphicon glyphicon-pencil"></span>
         <% end %>
       <% end %>
-      <% end %>
+    <% end %>
   </article>
-  
+  <div class="comments">
+    <h4>Comentarios:</h4>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <article>
+        <%= comment.description %>
+        <div class="time">Comentado hace <%= time_ago_in_words(comment.created_at)%> por: <%= comment.user.email %></div> 
+        <% if user_signed_in? %>
+          <% if current_user.id == comment.user_id %> 
+            <div>
+              <%= form_tag(post_path(comment.id), method: :delete, data: { confirm: 'Estas seguro de eliminar este Comentario?' }) do%>
+                <%= button_tag( class: "btn icon pull-right") do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                <% end %>          
+              <% end %>
+              <%= link_to edit_post_path(comment.id), class: "btn icon pull-right" do  %>
+                <span class="glyphicon glyphicon-pencil"></span>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        </article> 
+      <% end %>
+    </ul>
+  </div>
+  <%= render :partial => 'comments/commentEditor', :locals => {:type_obj => @post, :type_obj_new => @post.comments.new } %>
 </div>

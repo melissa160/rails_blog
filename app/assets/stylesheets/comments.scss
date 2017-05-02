@@ -1,3 +1,15 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$turquesa: #16857A;
+$blanco: #F6EBE9;
+
+.comment-area{
+	margin-left: 30px;
+}
+
+.comments article{
+	color: gray;
+	border: 1px solid $turquesa; 
+	background-color: $blanco; 
+}
